@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Math Magicians
+# Bookstore
 
-> Project for getting starting with React.
+> Project for view, add, and delete books.
 
 ![screenshot](./app_screenshot.png)
 
