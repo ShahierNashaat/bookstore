@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function BookItem(props) {
+const BookItem = (props) => {
   const { book } = props;
   return (
     <li className="book">
@@ -13,7 +13,7 @@ function BookItem(props) {
       <button type="button">Delete</button>
     </li>
   );
-}
+};
 
 BookItem.defaultProps = {
   book: {},

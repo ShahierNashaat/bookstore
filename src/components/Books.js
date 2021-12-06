@@ -1,6 +1,7 @@
 import BookItem from './BookItem';
+import AddBook from './Addbook';
 
-function Books() {
+const Books = () => {
   const books = [];
   const categories = [];
   return (
@@ -10,21 +11,9 @@ function Books() {
           books.map((book) => <BookItem book={book} key={book.id} />)
         }
       </ul>
-      <form>
-        <input type="text" name="bookName" required />
-        <select name="category">
-          {
-            categories.map((category) => (
-              <option value={category.name} key={category.id}>
-                {category.name}
-              </option>
-            ))
-          }
-        </select>
-        <input type="submit" value="ADD BOOK" />
-      </form>
+      <AddBook categories={categories} />
     </div>
   );
-}
+};
 
 export default Books;
