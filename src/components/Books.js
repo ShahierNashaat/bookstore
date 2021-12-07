@@ -1,8 +1,9 @@
+import { useSelector } from 'react-redux';
 import BookItem from './BookItem';
 import AddBook from './Addbook';
 
 const Books = () => {
-  const books = [];
+  const books = useSelector((state) => state.books);
   const categories = [];
   return (
     <div className="container">

@@ -8,3 +8,11 @@ nav ul {
   list-style-type: none;
   gap: 10px;
 }
+
+.error {
+  color: red;
+}
+
+.display-none {
+  display: none;
+}
