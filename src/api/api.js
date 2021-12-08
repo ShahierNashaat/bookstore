@@ -1,11 +1,6 @@
 const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/KuV7Z2YFTRBTq309Vw2X/books';
 
-export const getAllBooks = () => fetch(URL).then((response) => {
-  if (response.ok) {
-    return response.json();
-  }
-  return {};
-});
+export const getAllBooks = () => fetch(URL).then((response) => response.json());
 
 export const postBook = (book) => fetch(URL, {
   method: 'POST',

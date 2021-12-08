@@ -8,7 +8,12 @@ import { addBook } from '../redux/books/books';
 const AddBook = (props) => {
   const { categories } = props;
   const dispatch = useDispatch();
-  const booksKeys = useSelector((state) => Math.max(...state.books.map((book) => book.item_id)));
+  const booksKeys = useSelector((state) => {
+    if (state.books.length === 0) {
+      return 0;
+    }
+    return Math.max(...state.books.map((book) => parseInt(book.item_id, 10)));
+  });
 
   const submitBookToStore = () => {
     const bookTitle = document.querySelector('#bookTitle');
