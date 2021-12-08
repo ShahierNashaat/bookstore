@@ -17,7 +17,7 @@ function App() {
             </li>
             |
             <li>
-              <Link to="/categories">Calculator</Link>
+              <Link to="/categories">Categories</Link>
             </li>
           </ul>
         </nav>

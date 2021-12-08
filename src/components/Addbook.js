@@ -8,13 +8,13 @@ import { addBook } from '../redux/books/books';
 const AddBook = (props) => {
   const { categories } = props;
   const dispatch = useDispatch();
-  const booksLength = useSelector((state) => state.books.length);
+  const booksKeys = useSelector((state) => Math.max(...Object.keys(state.books)
+    .map((key) => parseInt(key, 10))));
 
   const submitBookToStore = () => {
     const bookTitle = document.querySelector('#bookTitle');
-    const bookAuthor = document.querySelector('#bookAuthor');
 
-    if (bookTitle.value === '' || bookAuthor.value === '') {
+    if (bookTitle.value === '') {
       document.querySelector('.error').classList.remove('display-none');
       return;
     }
@@ -22,22 +22,20 @@ const AddBook = (props) => {
     document.querySelector('.error').classList.add('display-none');
 
     const newBook = {
-      id: booksLength + 1,
+      item_id: booksKeys + 1,
       title: bookTitle.value,
-      author: bookAuthor.value,
+      category: 'category',
     };
 
     dispatch(addBook(newBook));
 
     bookTitle.value = '';
-    bookAuthor.value = '';
   };
 
   return (
     <form>
-      <div className="error display-none">Please add the title and the author for the book.</div>
+      <div className="error display-none">Please add the title for the book.</div>
       <input placeholder="Title" type="text" id="bookTitle" required />
-      <input placeholder="Author" type="text" id="bookAuthor" required />
       <select name="category">
         {
           categories.map((category) => (

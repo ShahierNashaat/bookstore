@@ -10,24 +10,23 @@ const BookItem = (props) => {
   const dispatch = useDispatch();
 
   const removeBookfromStore = () => {
-    dispatch(removeBook(book));
+    dispatch(removeBook(book.item_id));
   };
 
   return (
     <li className="book">
       <h2>{book.title}</h2>
-      <p>{book.author}</p>
       <button type="button" onClick={removeBookfromStore}>Delete</button>
     </li>
   );
 };
 
 BookItem.defaultProps = {
-  book: {},
+  book: [],
 };
 
 BookItem.propTypes = {
-  book: PropTypes.object,
+  book: PropTypes.array,
 };
 
 export default BookItem;
