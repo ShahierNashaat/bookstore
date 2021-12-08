@@ -22,11 +22,11 @@ const BookItem = (props) => {
 };
 
 BookItem.defaultProps = {
-  book: [],
+  book: {},
 };
 
 BookItem.propTypes = {
-  book: PropTypes.array,
+  book: PropTypes.object,
 };
 
 export default BookItem;

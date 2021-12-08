@@ -10,7 +10,7 @@ const convertDataObjectToArray = (data) => {
   const dataArray = [];
 
   Object.keys(data).map((key) => {
-    const book = data.key[0];
+    const book = data[key][0];
     book.item_id = key;
     return dataArray.push(book);
   });
@@ -21,7 +21,7 @@ const convertDataObjectToArray = (data) => {
 export const getBooks = () => async (dispatch) => {
   const data = await getAllBooks();
   const convertedData = convertDataObjectToArray(data);
-  dispatch({ type: GET_BOOKS, convertedData });
+  dispatch({ type: GET_BOOKS, payload: convertedData });
 };
 
 export const addBook = (payload) => async (dispatch) => {
@@ -37,7 +37,7 @@ export const removeBook = (payload) => async (dispatch) => {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_BOOKS:
-      return action.data;
+      return action.payload;
     case ADD_BOOK:
       return [...state, action.payload];
     case REMOVE_BOOK:
