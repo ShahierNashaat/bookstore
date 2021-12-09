@@ -15,8 +15,15 @@ const BookItem = (props) => {
 
   return (
     <li className="book">
+      <p>{book.category}</p>
       <h2>{book.title}</h2>
-      <button type="button" onClick={removeBookfromStore}>Delete</button>
+      <div className="buttons">
+        <button type="button">Comments</button>
+        |
+        <button type="button" onClick={removeBookfromStore}>Remove</button>
+        |
+        <button type="button">Edit</button>
+      </div>
     </li>
   );
 };

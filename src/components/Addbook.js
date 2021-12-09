@@ -17,8 +17,9 @@ const AddBook = (props) => {
 
   const submitBookToStore = () => {
     const bookTitle = document.querySelector('#bookTitle');
+    const bookCategory = document.querySelector('#categories');
 
-    if (bookTitle.value === '') {
+    if (bookTitle.value === '' || bookCategory.value === 'Category') {
       document.querySelector('.error').classList.remove('display-none');
       return;
     }
@@ -28,29 +29,39 @@ const AddBook = (props) => {
     const newBook = {
       item_id: booksKeys + 1,
       title: bookTitle.value,
-      category: 'category',
+      category: bookCategory.value,
     };
 
     dispatch(addBook(newBook));
 
     bookTitle.value = '';
+    bookCategory.value = 'Category';
   };
 
   return (
-    <form>
-      <div className="error display-none">Please add the title for the book.</div>
-      <input placeholder="Title" type="text" id="bookTitle" required />
-      <select name="category">
-        {
-          categories.map((category) => (
-            <option value={category.name} key={category.id}>
-              {category.name}
-            </option>
-          ))
-        }
-      </select>
-      <input type="button" value="ADD BOOK" onClick={submitBookToStore} />
-    </form>
+    <div className="add-book-area">
+      <h2>ADD NEW BOOK</h2>
+      <form>
+        <div className="error display-none">Please add the title and the category for the book.</div>
+        <div className="input-area">
+          <input placeholder="Book title" type="text" id="bookTitle" required />
+          <div className="custome-select">
+            <select id="categories" defaultValue="Category" onChange={() => { }}>
+              <option disabled hidden>Category</option>
+              {
+                categories.map((category) => (
+                  <option value={category} key={category}>
+                    {category}
+                  </option>
+                ))
+              }
+            </select>
+            <span className="custome-arrow" />
+          </div>
+          <input id="add-button" type="button" value="ADD BOOK" onClick={submitBookToStore} />
+        </div>
+      </form>
+    </div>
   );
 };
 

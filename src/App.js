@@ -6,6 +6,14 @@ import Categories from './components/Categories';
 import './App.css';
 
 function App() {
+  const addActiveClass = (e) => {
+    const navLinks = document.querySelectorAll('nav ul li a');
+    for (let i = 0; i < navLinks.length; i += 1) {
+      navLinks[i].classList.remove('active');
+    }
+    e.target.classList.add('active');
+  };
+
   return (
     <Router>
       <div>
@@ -13,11 +21,10 @@ function App() {
           <h1>Bookstore CMS</h1>
           <ul>
             <li>
-              <Link to="/">Books</Link>
+              <Link to="/" className="active" onClick={addActiveClass}>BOOKS</Link>
             </li>
-            |
             <li>
-              <Link to="/categories">Categories</Link>
+              <Link to="/categories" onClick={addActiveClass}>CATEGORIES</Link>
             </li>
           </ul>
         </nav>

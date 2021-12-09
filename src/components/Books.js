@@ -6,10 +6,12 @@ import { getBooks } from '../redux/books/books';
 
 const Books = () => {
   const books = useSelector((state) => state.books);
-  const categories = [];
+  const categories = ['Action and Adventure', 'Classics', 'Fantasy', 'Historical Fiction'];
   const dispatch = useDispatch();
 
-  useEffect(() => { dispatch(getBooks()); }, []);
+  useEffect(() => {
+    dispatch(getBooks());
+  }, []);
 
   return (
     <div className="container">
