@@ -17,6 +17,21 @@ nav {
   display: flex;
   align-items: center;
   padding: 0 10%;
+  justify-content: space-between;
+}
+
+.right-content {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #979797;
+}
+
+nav .right-content a {
+  text-decoration: none;
 }
 
 nav h1 {
@@ -30,9 +45,9 @@ nav ul {
   gap: 10px;
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: #979797;
+nav .fas.fa-user {
+  color: var(--main-color);
+  cursor: pointer;
 }
 
 .error {
@@ -61,14 +76,20 @@ nav ul li a {
   border: solid 1px #e8e8e8;
   background-color: #fff;
   margin: 2.313rem 0;
-  padding: 2rem 9.188rem 1.625rem 1.688rem;
+  padding: 1.625rem 1.688rem;
+  display: flex;
 }
 
-.books-list li p {
+.book-middle-content .text-div p {
+  margin: 0;
+}
+
+.books-list li .book-right-content p {
   color: var(--secondary-color);
   font-size: 0.875rem;
   opacity: 0.8;
   margin: 0 2.438rem 0 0;
+  font-weight: bold;
 }
 
 .add-book-area h2 {
@@ -77,11 +98,20 @@ nav ul li a {
   color: #888;
 }
 
-.books-list li h2 {
+.books-list li .book-right-content h2 {
   font-size: 1.375rem;
   font-weight: bold;
   color: var(--secondary-color);
-  margin: 0.188rem 20.188rem 35px 0;
+  margin-top: 5px;
+  margin-bottom: 1px;
+}
+
+.books-list li .book-right-content .author {
+  margin: 0.5rem 20.188rem 35px 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4386bf;
+  opacity: unset;
 }
 
 .buttons {
@@ -90,7 +120,21 @@ nav ul li a {
   gap: 5px;
 }
 
-.books-list li button {
+.book-left-content button {
+  background-color: var(--main-color);
+  width: 80%;
+  border-radius: 3px;
+  height: 2.063rem;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+}
+
+.book-left-content button:hover {
+  background-color: #0073ca;
+}
+
+.books-list li .book-right-content button {
   border: 0;
   background-color: white;
   color: #4386bf;
@@ -100,7 +144,7 @@ nav ul li a {
   padding: 0;
 }
 
-.books-list li button:hover {
+.books-list li .book-right-content button:hover {
   text-decoration: underline;
 }
 
@@ -163,4 +207,58 @@ nav ul li a {
 
 #add-button:hover {
   background-color: #0073ca;
+}
+
+.book-right-content {
+  width: 55%;
+}
+
+.book-middle-content {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.book-middle-content .progress-div {
+  width: 4.25rem;
+}
+
+.book-middle-content .text-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.book-middle-content .text-div .presentage-text {
+  color: var(--secondary-color);
+  font-size: 2rem;
+}
+
+.book-middle-content .text-div .completed-text {
+  opacity: 0.5;
+  font-size: 0.875rem;
+  color: var(--secondary-color);
+}
+
+.book-left-content {
+  width: 20%;
+}
+
+.book-left-content .current-chapter {
+  font-size: 0.813rem;
+  font-weight: 300;
+  color: var(--secondary-color);
+  opacity: 0.8;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.book-left-content .chapter {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+  margin-top: 10px;
+  margin-bottom: 30px;
 }

@@ -11,22 +11,29 @@ function App() {
     for (let i = 0; i < navLinks.length; i += 1) {
       navLinks[i].classList.remove('active');
     }
-    e.target.classList.add('active');
+    if (e.target === document.querySelector('nav h1')) {
+      document.querySelector('nav ul li a').classList.add('active');
+    } else {
+      e.target.classList.add('active');
+    }
   };
 
   return (
     <Router>
       <div>
         <nav>
-          <h1>Bookstore CMS</h1>
-          <ul>
-            <li>
-              <Link to="/" className="active" onClick={addActiveClass}>BOOKS</Link>
-            </li>
-            <li>
-              <Link to="/categories" onClick={addActiveClass}>CATEGORIES</Link>
-            </li>
-          </ul>
+          <div className="right-content">
+            <Link to="/" onClick={addActiveClass}><h1>Bookstore CMS</h1></Link>
+            <ul>
+              <li>
+                <Link to="/" className="active" onClick={addActiveClass}>BOOKS</Link>
+              </li>
+              <li>
+                <Link to="/categories" onClick={addActiveClass}>CATEGORIES</Link>
+              </li>
+            </ul>
+          </div>
+          <i className="fas fa-user" />
         </nav>
 
         <Routes>
