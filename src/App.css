@@ -4,7 +4,7 @@
 }
 
 body {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   background-color: #fafafa;
 }
 
@@ -71,6 +71,12 @@ nav ul li a {
   margin: 0 2.438rem 0 0;
 }
 
+.add-book-area h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #888;
+}
+
 .books-list li h2 {
   font-size: 1.375rem;
   font-weight: bold;
@@ -96,12 +102,6 @@ nav ul li a {
 
 .books-list li button:hover {
   text-decoration: underline;
-}
-
-.add-book-area h2 {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #888;
 }
 
 .input-area {
