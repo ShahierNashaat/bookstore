@@ -15,7 +15,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://github.com/ShahierNashaat/bookstore)
+[Live Demo Link](https://bookstore-shahier.herokuapp.com/)
 
 ## Getting Started
 
